@@ -1,0 +1,328 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    animation: move 4s linear infinite alternate;
+}
+.one{
+    margin-top: -14px;
+}
+
+.weather-out{
+    margin-top: 2%;
+    height:85%;
+    width:75%;
+    position:absolute;
+    top: 9.5%;
+    left: 24%;
+}
+@keyframes move {
+    0% {background:rgb(148, 145, 140); border:0px rgb(53, 87, 126) solid;background-image: url(../public/cl.jpg);background-size: cover;}
+    25% {background:rgb(148, 145, 140);border:0px rgb(61, 129, 141) solid;background-image: url(../public/sun.jpg);background-size: cover;}
+    50%{background: rgb(161, 167, 139);border:0px solid rgb(80, 87, 72);background-image: url(../public/rain.jpg);background-size: cover;}
+    75%{background: rgb(83, 78, 83);border:0px solid rgb(155, 155, 143);background-image: url(../public/thun.jpg);background-size: cover;}
+    100%{background: gray;border:0px solid rgb(177, 212, 120);background-image: url(../public/thun2.jpg);background-size: cover;}
+  }
+h2{
+    text-align: center;
+    margin-right: 13rem;
+}
+.weather-inner{
+    display: flex;
+    height:400px;
+    width:80%;
+    position:absolute;
+    top: 10%;
+    left: 0%;
+    background:rgb(52, 57, 83);
+    
+}
+@media screen and (max-width: 500px) {
+    .weather-inner {
+        width:135%;
+        top: 8%;
+        left: 5%;
+        display: flex;
+      flex-direction: column;
+      gap:10%;
+      height:660px;
+      justify-content: center;
+      align-items: center;
+    }
+    .details{
+        margin-top:20%;
+    }
+  }
+
+#input-city{
+    border-radius: 5px;
+    background-color: rgba(61, 219, 21, 0);
+    height:40px;
+    width:80%;
+    padding:5px;
+    text-align: center;
+    font-size: medium;
+    font-family: 500;
+    color: blue;
+    text-decoration: none;
+    border: 0px solid grey;
+}
+#btn{
+    border-radius: 5px;
+    background-color: rgba(26, 199, 20, 0);
+    height:20%;
+    width:100px;
+    padding:10px;
+    text-decoration: none;
+    border:none;
+    font-size: medium;
+}
+#input-city:hover{
+    
+    background-color: rgb(38, 179, 16);
+}
+#btn:hover{
+    
+    background-color: rgb(38, 179, 16);
+    cursor: pointer;
+}
+
+.find-city{
+    text-align: center;
+    margin-top: 2%;
+}
+.w-pic{
+    color: rgb(63, 231, 175);
+    text-align: center;
+    border-radius: 5px;
+   height: 50%;
+   width: 40%;
+}
+#image{
+    width: 70%;
+    height: 80%;
+    animation: run 6s linear infinite alternate;
+}
+@keyframes run {
+    0%{transform: translateX(-10px);}
+    100%{transform: translateX(48px);}
+  }
+  .s-desc p{
+      font-size:large
+  }
+
+  .details{
+      color:rgb(245, 143, 211);
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 5px;
+    height: 100%;
+    width: 60%;
+
+  }
+  .det{
+      display: flex;
+      flex-wrap: wrap;
+      
+  } */
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    animation: move 4s linear infinite alternate;
+}
+
+.one {
+    margin-top: -14px;
+}
+
+.weather-out {
+    margin-top: 2%;
+    height: 85%;
+    width: 75%;
+    position: absolute;
+    top: 9.5%;
+    left: 24%;
+}
+
+@keyframes move {
+    0% {
+        background: rgb(148, 145, 140);
+        border: 0px solid rgb(53, 87, 126);
+        background-image: url(../public/cl.jpg);
+        background-size: cover;
+    }
+    25% {
+        background: rgb(148, 145, 140);
+        border: 0px solid rgb(61, 129, 141);
+        background-image: url(../public/sun.jpg);
+        background-size: cover;
+    }
+    50% {
+        background: rgb(161, 167, 139);
+        border: 0px solid rgb(80, 87, 72);
+        background-image: url(../public/rain.jpg);
+        background-size: cover;
+    }
+    75% {
+        background: rgb(83, 78, 83);
+        border: 0px solid rgb(155, 155, 143);
+        background-image: url(../public/thun.jpg);
+        background-size: cover;
+    }
+    100% {
+        background: gray;
+        border: 0px solid rgb(177, 212, 120);
+        background-image: url(../public/thun2.jpg);
+        background-size: cover;
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-right: 13rem;
+}
+
+.weather-inner {
+    display: flex;
+    height: 400px;
+    width: 80%;
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    background: rgb(52, 57, 83);
+}
+
+@media screen and (max-width: 500px) {
+    .weather-inner {
+        width: 135%;
+        top: 8%;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 10%;
+        height: 660px;
+        justify-content: center;
+        align-items: center;
+    }
+    .details {
+        margin-top: 20%;
+    }
+}
+
+#input-city {
+    border-radius: 5px;
+    background-color: rgba(61, 219, 21, 0);
+    height: 40px;
+    width: 80%;
+    padding: 5px;
+    text-align: center;
+    font-size: medium;
+    font-family: 500;
+    color: blue;
+    text-decoration: none;
+    border: 0px solid grey;
+}
+
+#btn {
+    border-radius: 5px;
+    background-color: rgba(26, 199, 20, 0);
+    height: 20%;
+    width: 100px;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    font-size: medium;
+}
+
+#input-city:hover {
+    background-color: rgb(38, 179, 16);
+}
+
+#btn:hover {
+    background-color: rgb(38, 179, 16);
+    cursor: pointer;
+}
+
+.find-city {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.w-pic {
+    color: rgb(63, 231, 175);
+    text-align: center;
+    border-radius: 5px;
+    height: 50%;
+    width: 40%;
+}
+
+#image {
+    width: 70%;
+    height: 80%;
+    animation: run 6s linear infinite alternate;
+}
+
+@keyframes run {
+    0% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(48px);
+    }
+}
+
+.s-desc p {
+    font-size: large;
+}
+
+.details {
+    color: rgb(245, 143, 211);
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    height: 100%;
+    width: 60%;
+}
+
+.det {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .weather-out {
+        width: 90%;
+        left: 5%;
+    }
+
+    .weather-inner {
+        width: 95%;
+        left: 2.5%;
+    }
+
+    h2 {
+        margin-right: 0;
+    }
+
+    .w-pic {
+        width: 60%;
+    }
+
+    .details {
+        width: 80%;
+    }
+}
+

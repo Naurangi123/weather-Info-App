@@ -1,0 +1,18 @@
+{
+  "name": "waetherapp",
+  "version": "1.0.0",
+  "description": "Weather information Fetch through the weatherapi",
+  "main": "app.js",
+  "scripts": {
+   "start": "node app.js" 
+  },
+  "author": "naurangi",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "requests": "^0.3.0"
+  }
+}
