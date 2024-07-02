@@ -2,6 +2,8 @@
 var express = require("express");
 var requests = require("requests");
 var app = express();
+require('dotenv').config();
+
 
 var bodyParser = require("body-parser");
 
