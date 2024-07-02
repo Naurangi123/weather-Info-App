@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   console.log("Request made on:" + req.url);
 
   requests(
-    "http://api.openweathermap.org/data/2.5/weather?q=kathmandu&appid=344b134b52cf63f9d28bb5e7ea69259b&units=metric"
+    "http://api.openweathermap.org/data/2.5/weather?q=duhai&appid=344b134b52cf63f9d28bb5e7ea69259b&units=metric"
   )
     //if we get data then it goes through chunk and print data in console
     .on("data", function (chunk) {
