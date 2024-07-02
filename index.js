@@ -13,29 +13,29 @@ app.use("/public", express.static("public"));
 //it tells express to use ejs as a viewengine that will then render dynamic content
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  console.log("Request made on:" + req.url);
+// app.get("/", (req, res) => {
+//   console.log("Request made on:" + req.url);
 
-  requests(
-    "http://api.openweathermap.org/data/2.5/weather?q=duhai&appid=344b134b52cf63f9d28bb5e7ea69259b&units=metric"
-  )
-    //if we get data then it goes through chunk and print data in console
-    .on("data", function (chunk) {
-      const objdata = JSON.parse(chunk); //converting json to object to use data in site
-      //after this we can pass object in ejs site
+//   requests(
+//     "http://api.openweathermap.org/data/2.5/weather?q=duhai&appid=344b134b52cf63f9d28bb5e7ea69259b&units=metric"
+//   )
+//     //if we get data then it goes through chunk and print data in console
+//     .on("data", function (chunk) {
+//       const objdata = JSON.parse(chunk); //converting json to object to use data in site
+//       //after this we can pass object in ejs site
 
-      const time = new Date().toLocaleTimeString();
+//       const time = new Date().toLocaleTimeString();
 
-      //we can pass data dynamic througn 2nd param as objects
-      res.render("weather", { apidata: objdata, time: time });
-      console.log(objdata);
-    })
-    //else through error
-    .on("end", function (err) {
-      if (err) return console.log("connection closed due to errors", err);
-      console.log("end");
-    });
-});
+//       //we can pass data dynamic througn 2nd param as objects
+//       res.render("weather", { apidata: objdata, time: time });
+//       console.log(objdata);
+//     })
+//     //else through error
+//     .on("end", function (err) {
+//       if (err) return console.log("connection closed due to errors", err);
+//       console.log("end");
+//     });
+// });
 
 // create application/x-www-form-urlencoded parser i.e middleware
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
