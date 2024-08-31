@@ -4,6 +4,7 @@ var requests = require("requests");
 var app = express();
 require('dotenv').config();
 
+API=process.env.API_URL
 
 var bodyParser = require("body-parser");
 
@@ -15,9 +16,8 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   console.log("Request made on:" + req.url);
 
-  requests(
-    "http://api.openweathermap.org/data/2.5/weather?q=duhai&appid=344b134b52cf63f9d28bb5e7ea69259b&units=metric"
-  )
+
+  requests(API)
     .on("data", function (chunk) {
       const objdata = JSON.parse(chunk); 
 
