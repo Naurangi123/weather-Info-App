@@ -27,7 +27,7 @@
           <img src="../public/sunny.jpg" alt="" id="image" />
           <% } %>
 
-         <% if(apidata.clouds.all>0 && apidata.clouds.all< 50){%>
+         <% if(apidata.clouds.all> 0 && apidata.clouds.all< 50){%>
           <img src="../public/suncloud.jpg" alt="" id="image" />
           <% } %>
 
@@ -42,8 +42,7 @@
             </p>
             <span>Feels Like:  <%=apidata.main.feels_like%>&degC</span>
             <br>
-       
-             <br>
+            <p><%=apidata.weather[0].icon%></p>
           </div>
         </div>
 

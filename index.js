@@ -14,23 +14,26 @@ app.use("/public", express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  console.log("Request made on:" + req.url);
+  res.render(req.url);
 
 
   requests(API)
-    .on("data", function (chunk) {
+  .on("data", function (chunk) {
+    try {
       const objdata = JSON.parse(chunk); 
-
       const time = new Date().toLocaleTimeString();
-
       res.render("weather", { apidata: objdata, time: time });
-      console.log(objdata);
-    })
-    //else through error
-    .on("end", function (err) {
-      if (err) return console.log("connection closed due to errors", err);
-      console.log("end");
-    });
+    } catch (error) {
+      res.render("error", { message: "Failed to parse data." });
+    }
+  })
+  .on("end", function (err) {
+    if (err) {
+      console.log("connection closed due to errors", err);
+      res.render("error", { message: "API request failed." });
+    }
+  });
+
 });
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -47,16 +50,12 @@ app.post("/", urlencodedParser, function (req, res) {
       const objdata = JSON.parse(chunk);
       const time = new Date().toLocaleTimeString();
 
-      console.log("weather requested :" + req.body.city);
       if (objdata) {
         res.render("weather", { apidata: objdata, time: time });
       }
-      console.log(objdata);
     })
     .on("end", function (err) {
       if (err) return console.log("connection closed due to errors", err);
-      console.log('something went wrong')
-      console.log("end");
     });
 });
  const PORT=process.env.PORT||5000;
